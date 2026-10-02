@@ -425,3 +425,402 @@ The main analytical dimensions include:
                  │                         │
                  ▼                         ▼
               Gender                   Demographics
+
+
+🧮 DAX Analytics
+
+DAX (Data Analysis Expressions) is used to create dynamic measures.
+
+Total Seats
+Total Seats =
+COUNT('Lok Sabha'[PC_Name])
+
+Total Seats
+Total Seats =
+COUNT('Lok Sabha'[PC_Name])
+Total Votes
+Total Votes =
+SUM('Lok Sabha'[Total_Votes])
+Seats Won
+Seats Won =
+CALCULATE(
+    COUNT('Lok Sabha'[PC_Name]),
+    'Lok Sabha'[Result] = "Won"
+)
+Seat Share
+Seat Share =
+DIVIDE(
+    [Seats Won],
+    [Total Seats],
+    0
+) * 100
+Average Female Turnout
+Average Female Turnout =
+DIVIDE(
+    SUM('Lok Sabha'[Female_Voters]),
+    SUM('Lok Sabha'[Female_Electors]),
+    0
+) * 100
+Average Male Turnout
+Average Male Turnout =
+DIVIDE(
+    SUM('Lok Sabha'[Male_Voters]),
+    SUM('Lok Sabha'[Male_Electors]),
+    0
+) * 100
+📊 Dashboard Components
+📌 KPI Cards
+
+The dashboard can contain KPI cards for:
+
+Total Seats
+Seats Won
+Total Votes
+Vote Share
+Voter Turnout
+Average Turnout
+📈 Charts
+
+The project uses various Power BI charts including:
+
+Bar Charts
+Column Charts
+Line Charts
+Donut Charts
+Pie Charts
+Tables
+Matrix Visuals
+KPI Cards
+Maps
+🎛️ Interactive Filters
+
+Users can dynamically filter election information using:
+
+┌───────────────────────────────┐
+│       INTERACTIVE FILTERS     │
+├───────────────────────────────┤
+│ Election Year                 │
+│ State                         │
+│ Constituency                  │
+│ Political Party               │
+│ Candidate                     │
+│ Gender                        │
+│ Age Group                     │
+└───────────────────────────────┘
+
+All dashboard visuals update dynamically based on the selected filters.
+
+📊 Dashboard Modules
+1. Election Overview Dashboard
+
+Provides:
+
+Total Seats
+Seats Won
+Total Votes
+Vote Share
+Voter Turnout
+Party Performance
+State-level summary
+2. Historical Trends
+
+Provides:
+
+Year-wise election results
+Party seat trends
+Vote share trends
+Turnout trends
+Historical comparisons
+3. Party Performance
+
+Provides:
+
+Party-wise seats
+Party-wise votes
+Vote share
+State-wise party performance
+Constituency-level performance
+4. Candidate Analysis
+
+Provides:
+
+Candidate name
+Party
+Constituency
+State
+Votes
+Winning margin
+Winning percentage
+Age
+Gender
+Education
+5. State Analysis
+
+Provides:
+
+State-wise seats
+State-wise votes
+State-wise turnout
+Female turnout
+Male turnout
+Party performance
+6. Constituency Analysis
+
+Provides:
+
+Constituency results
+Candidate performance
+Votes received
+Winning margin
+Vote share
+Turnout
+7. Voter Turnout Analysis
+
+Provides:
+
+Total electors
+Total votes cast
+Male electors
+Female electors
+Male votes
+Female votes
+Male turnout
+Female turnout
+Overall turnout
+8. Demographic Analysis
+
+Provides analysis based on:
+
+Gender
+Age Group
+Social Category
+Geography
+Regional participation
+9. Vote Share Analysis
+
+Provides:
+
+Party-wise vote share
+State-wise vote share
+Constituency-level vote share
+Historical vote share
+Total votes
+📁 Project Structure
+ElectViz/
+│
+├── README.md
+│
+├── Dataset/
+│   ├── election_data.csv
+│   ├── candidate_data.csv
+│   └── voter_data.csv
+│
+├── PowerBI/
+│   └── ElectViz_Dashboard.pbix
+│
+├── Screenshots/
+│   ├── election_overview.png
+│   ├── historical_trends.png
+│   ├── party_analysis.png
+│   ├── candidate_analysis.png
+│   ├── state_analysis.png
+│   └── turnout_analysis.png
+│
+├── Documentation/
+│   ├── Project_Report.docx
+│   └── Project_Presentation.pptx
+│
+└── References/
+    └── data_sources.txt
+
+🚀 How to Run the Project
+Step 1 – Install Power BI
+
+Install Microsoft Power BI Desktop on your computer.
+
+Step 2 – Clone the Repository
+git clone https://github.com/your-username/ElectViz.git
+
+Move into the project directory:
+
+cd ElectViz
+Step 3 – Prepare Dataset
+
+Place the required CSV/Excel datasets inside:
+
+Dataset/
+Step 4 – Open Power BI File
+
+Open:
+
+PowerBI/ElectViz_Dashboard.pbix
+
+using Microsoft Power BI Desktop.
+
+Step 5 – Update Data Source
+
+If the dataset path has changed:
+
+Home
+  ↓
+Transform Data
+  ↓
+Data Source Settings
+  ↓
+Change Source
+
+Select the correct dataset location.
+
+Step 6 – Refresh Data
+
+Click:
+
+Home → Refresh
+
+Power BI will update the dashboard using the latest available dataset.
+
+Step 7 – Explore Dashboard
+
+Use:
+
+Slicers
+Filters
+KPI Cards
+Charts
+Maps
+Tables
+Interactive visuals
+
+to explore the election data.
+
+💡 Example Analytical Insights
+
+The dashboard can be used to examine:
+
+Changes in party performance across election years.
+Distribution of seats across parties.
+State-wise voting patterns.
+Constituency-level election results.
+Voter turnout differences.
+Male and female participation.
+Vote share distribution.
+Candidate performance.
+Regional election trends.
+Demographic participation.
+🎯 Target Users
+
+ElectViz is designed for:
+
+Media organizations
+Journalists
+Election data analysts
+Researchers
+Students
+Data visualization professionals
+Academic projects
+Users interested in election data
+💻 Application Flow
+                    ┌───────────────┐
+                    │     USER      │
+                    └───────┬───────┘
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │ Power BI Dashboard  │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │ Interactive Filters │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │   DAX Calculations  │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │   Data Model        │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │  Power Query        │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │ Election Dataset    │
+                 └─────────────────────┘
+🔮 Future Enhancements
+
+Future versions of ElectViz can include:
+
+Real-time election result integration
+Automated dataset updates
+Advanced geospatial analysis
+Machine learning-based election trend analysis
+AI-powered election data summaries
+Natural-language querying
+Automated media report generation
+Advanced interactive maps
+Additional election datasets
+Automated dashboard refresh
+Cloud-based Power BI deployment
+📌 Project Information
+Information	Details
+Project Name	ElectViz – Election Data Visualization for Media
+Domain	Data Analytics & Business Intelligence
+Primary Technology	Microsoft Power BI
+Data Processing	Power Query
+Analytics	DAX
+Data Format	Excel / CSV
+Project Type	Data Visualization & Election Analytics
+Program	Infosys Springboard Internship Program
+👩‍💻 Developer
+
+Vaishnavi
+
+Developed as part of the:
+
+Infosys Springboard Internship Program
+
+📜 License
+
+This project is developed for educational, academic, and internship
+purposes.
+
+The datasets used in the project remain subject to the licenses and terms
+of their respective sources.
+
+⭐ Conclusion
+
+ElectViz demonstrates how Power BI, Power Query, DAX, and data modeling
+can be used to transform complex election datasets into meaningful and
+interactive visualizations.
+
+The project provides an integrated platform for exploring:
+
+Election Results
+      ↓
+Party Performance
+      ↓
+Candidate Analysis
+      ↓
+State Analysis
+      ↓
+Constituency Analysis
+      ↓
+Voter Turnout
+      ↓
+Demographic Participation
+      ↓
+Vote Share
+      ↓
+Historical Trends
+      ↓
+Interactive Media Insights
+
+ElectViz makes complex election data easier to explore, compare, and
+understand through an interactive Business Intelligence dashboard.
