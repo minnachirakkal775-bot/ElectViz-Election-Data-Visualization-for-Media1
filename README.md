@@ -298,3 +298,42 @@ architecture.
                          │     Media Insights &    │
                          │   Data-Driven Reporting │
                          └─────────────────────────┘
+
+🔄 Project Workflow
+
+Election Data Collection
+          ↓
+Data Import
+          ↓
+Data Cleaning & Preprocessing
+          ↓
+Data Transformation
+          ↓
+Data Validation
+          ↓
+Data Modeling
+          ↓
+DAX Measure Creation
+          ↓
+Dashboard Development
+          ↓
+Testing & Validation
+          ↓
+Performance Optimization
+          ↓
+Final Power BI Dashboard
+          ↓
+Media Insights & Reporting
+
+🧩 Architecture Components
+| Layer               | Component           | Purpose                                   |
+| ------------------- | ------------------- | ----------------------------------------- |
+| Data Source Layer   | Election datasets   | Provides raw election information         |
+| Data Import Layer   | Excel / CSV         | Imports datasets                          |
+| Processing Layer    | Power Query         | Cleans and transforms data                |
+| Validation Layer    | Data Quality Checks | Verifies data consistency                 |
+| Modeling Layer      | Power BI Data Model | Creates relationships between data        |
+| Analytics Layer     | DAX                 | Creates measures and calculations         |
+| Visualization Layer | Power BI            | Displays interactive dashboards           |
+| Insight Layer       | Media Analysis      | Provides understandable election insights |
+
