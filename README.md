@@ -337,3 +337,91 @@ Media Insights & Reporting
 | Visualization Layer | Power BI            | Displays interactive dashboards           |
 | Insight Layer       | Media Analysis      | Provides understandable election insights |
 
+🛠️ Tools and Technologies
+| Technology               | Purpose                                      |
+| ------------------------ | -------------------------------------------- |
+| **Microsoft Power BI**   | Dashboard development and data visualization |
+| **Power Query**          | Data cleaning and transformation             |
+| **DAX**                  | Analytical calculations and measures         |
+| **Microsoft Excel**      | Dataset preparation                          |
+| **CSV**                  | Election data storage                        |
+| **Power BI Data Model**  | Data relationships and modeling              |
+| **Power BI Maps**        | Geographical visualization                   |
+| **Microsoft PowerPoint** | Project presentation                         |
+| **Microsoft Word**       | Project documentation                        |
+
+📂 Dataset
+
+The project uses election-related datasets containing information such as:
+Election Year
+State
+Constituency
+Candidate
+Political Party
+Votes
+Seats
+Vote Share
+Winning Margin
+Winning Percentage
+Gender
+Age
+Age Group
+Male Electors
+Female Electors
+Male Votes
+Female Votes
+Voter Turnout
+
+🧹 Data Cleaning & Preprocessing
+
+Power Query is used to prepare raw election datasets.
+
+Data Cleaning
+
+The following operations are performed:
+
+Remove duplicate records
+Handle missing values
+Correct data types
+Standardize column names
+Standardize party names
+Standardize state names
+Remove unnecessary columns
+Correct inconsistent values
+Data Transformation
+
+Power Query is used for:
+
+Creating calculated columns
+Creating age groups
+Transforming categorical data
+Filtering records
+Merging datasets
+Appending datasets
+Formatting data
+Preparing turnout fields
+🗃️ Data Modeling
+
+The cleaned data is organized into a Power BI data model.
+
+The main analytical dimensions include:
+
+                         Election Data
+                              │
+          ┌───────────────────┼───────────────────┐
+          │                   │                   │
+          ▼                   ▼                   ▼
+        State             Party              Candidate
+          │                   │                   │
+          ▼                   ▼                   ▼
+    Constituency          Votes              Performance
+          │                   │                   │
+          └───────────────────┼───────────────────┘
+                              │
+                              ▼
+                       Voter Participation
+                              │
+                 ┌────────────┴────────────┐
+                 │                         │
+                 ▼                         ▼
+              Gender                   Demographics
